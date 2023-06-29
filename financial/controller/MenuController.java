@@ -18,13 +18,11 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
-    static ArrayList<Account> accounts = new ArrayList<>();
+    public static ArrayList<Account> accounts = new ArrayList<>();
     @FXML
     private Button create;
     @FXML
     private Button dw;
-    @FXML
-    private Button transfer;
     @FXML
     private Button info;
     @FXML
@@ -61,17 +59,7 @@ public class MenuController implements Initializable {
         });
 
         dw.setOnAction(e -> {
-            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("../view/DWPage.fxml"));
-            try {
-                loader.load();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-
-            Stage stage = new Stage();
-
-            stage.setScene(new Scene(loader.getRoot()));
-            stage.show();
+            loadPage("../view/DWPage.fxml");
         });
 
         info.setOnAction(e -> {

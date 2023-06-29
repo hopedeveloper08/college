@@ -48,8 +48,8 @@ public class DWController implements Initializable {
 
         ok1.setOnAction(e -> {
             try {
-                if (MenuController.accounts.get(Integer.parseInt(id0.getText()) - 1).deposit(Double.parseDouble(amount1.getText()))){
-                    MenuController.success_alert(" مبلغ"+amount1.getText()+" به حساب "+id0.getText()+" واریز شد!");
+                if (MenuController.accounts.get(Integer.parseInt(id0.getText()) - 1).withdraw(Double.parseDouble(amount1.getText()))){
+                    MenuController.success_alert(" مبلغ"+amount1.getText()+" از حساب "+id0.getText()+" برداشت شد!");
                 }
                 else {
                     MenuController.error_alert(null);
@@ -62,7 +62,7 @@ public class DWController implements Initializable {
 
         ok2.setOnAction(e -> {
             try {
-                if (MenuController.accounts.get(Integer.parseInt(id1.getText()) - 1).withdraw(Double.parseDouble(amount2.getText())) && MenuController.accounts.get(Integer.parseInt(id2.getText()) - 1).deposit(Double.parseDouble(amount2.getText()))){
+                if (Integer.parseInt(id1.getText())!=Integer.parseInt(id2.getText()) && MenuController.accounts.get(Integer.parseInt(id1.getText()) - 1).withdraw(Double.parseDouble(amount2.getText())) && MenuController.accounts.get(Integer.parseInt(id2.getText()) - 1).deposit(Double.parseDouble(amount2.getText()))){
                     MenuController.success_alert(" مبلغ"+amount2.getText()+" به حساب "+id2.getText()+" واریز شد!");
                 }
                 else {

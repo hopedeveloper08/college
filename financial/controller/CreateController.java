@@ -6,7 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.stage.FileChooser;
@@ -116,7 +115,7 @@ public class CreateController implements Initializable {
 
     void add_image() throws IOException {
         if (imgview.getImage() != null) {
-            File file1 = new File("C:\\Users\\OMID\\Desktop\\2\\bank\\src\\model\\image\\"+(MenuController.accounts.size()+1)+".jpg");
+            File file1 = new File("C:\\Users\\OMID\\Desktop\\2\\bank\\src\\model\\image\\"+MenuController.accounts.size()+".jpg");
             BufferedImage originalImage = ImageIO.read(file);
             ImageIO.write(originalImage, "jpg", file1);
         }
